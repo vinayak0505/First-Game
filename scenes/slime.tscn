@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://bm2r4sk0l7e2x"]
+
+[ext_resource type="Texture2D" uid="uid://ct3mgvhg4buv5" path="res://assets/sprites/slime_green.png" id="1_5v1kw"]
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_opssd"]
+[ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="2_12x8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj6ks"]
+atlas = ExtResource("1_5v1kw")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gmav"]
+atlas = ExtResource("1_5v1kw")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eowg4"]
+atlas = ExtResource("1_5v1kw")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d0n8"]
+atlas = ExtResource("1_5v1kw")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2fn4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj6ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gmav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eowg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d0n8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8433h"]
+size = Vector2(10, 12)
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_opssd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x2fn4")
+autoplay = "default"
+
+[node name="KillZone" parent="." instance=ExtResource("2_12x8w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_8433h")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(8, 2.08165e-12)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-8, 0)
