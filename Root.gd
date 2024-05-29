@@ -16,7 +16,6 @@ func _process(delta):
 
 
 func changeChild():
-	print("asflkj")
 	if(levelScene):
 		levelScene.queue_free();
 	current_level += 1
