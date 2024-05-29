@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://djmar0n0hhycs"]
+[gd_scene load_steps=10 format=3 uid="uid://djmar0n0hhycs"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_qcaas"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_bkmkm"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_h53og"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="4_7l5d4"]
+[ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="6_uaaw5"]
 [ext_resource type="FontFile" uid="uid://coaehs34i4elu" path="res://assets/fonts/PixelOperator8.ttf" id="8_fyqdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
@@ -456,3 +457,6 @@ text = "Press -> or D to move right
 
 Press <- or A to move left
 "
+
+[node name="Finish" parent="." instance=ExtResource("6_uaaw5")]
+position = Vector2(731, 13)
