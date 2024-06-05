@@ -21,8 +21,6 @@ func changeChild():
 	current_level += 1
 	var newLevel = load(PREFIX + str(current_level) + POSTFIX)
 	levelScene = newLevel.instantiate()
-	add_child(levelScene)
+	call_deferred("add_child",levelScene)
 	
-func printing():
-	print("callled levelchange")
 

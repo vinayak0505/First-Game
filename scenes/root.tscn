@@ -4,6 +4,19 @@
 
 [node name="Root" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CoinsCount" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Coins: 0"
+
 [node name="LevelChange" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_jjb04")
