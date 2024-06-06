@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://djmar0n0hhycs"]
+[gd_scene load_steps=9 format=3 uid="uid://djmar0n0hhycs"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_qcaas"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_bkmkm"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_h53og"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="4_7l5d4"]
@@ -427,10 +426,6 @@ text = "Press -> or D to move right
 
 Press <- or A to move left
 "
-
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_qcaas")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-54, -11)

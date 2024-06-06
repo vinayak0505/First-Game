@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://caoytf6wc88n3"]
+[gd_scene load_steps=10 format=3 uid="uid://caoytf6wc88n3"]
 
 [ext_resource type="FontFile" uid="uid://coaehs34i4elu" path="res://assets/fonts/PixelOperator8.ttf" id="1_ndi6r"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_plkkd"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="3_ab5uc"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_4su4e"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="5_wu1dh"]
@@ -426,10 +425,6 @@ theme_override_fonts/font = ExtResource("1_ndi6r")
 theme_override_font_sizes/font_size = 8
 text = "Collect Coin
 "
-
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_plkkd")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-54, -11)

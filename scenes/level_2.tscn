@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxl5mcydmd8rq"]
+[gd_scene load_steps=9 format=3 uid="uid://dxl5mcydmd8rq"]
 
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="1_fgwi6"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ja8ca"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="1_y213s"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="5_jppt5"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="6_gnmiw"]
@@ -425,10 +424,6 @@ theme_override_fonts/font = ExtResource("8_gwwiw")
 theme_override_font_sizes/font_size = 8
 text = "press up to jump
 "
-
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_ja8ca")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-54, -11)
