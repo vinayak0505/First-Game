@@ -9,13 +9,17 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+var is_double_jump = true
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() || is_double_jump):
+		if not is_on_floor():
+			is_double_jump = false
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input directio, -1, 0, 1
@@ -29,6 +33,7 @@ func _physics_process(delta):
 	
 	# Play animations
 	if is_on_floor():
+		is_double_jump = true
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:
