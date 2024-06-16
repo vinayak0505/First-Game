@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://buyye4odwdtbv"]
+
+[ext_resource type="Script" path="res://scripts/LavaDropGenerator.gd" id="1_56p7v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_30pnq"]
+
+[node name="LavaDropGenerator" type="Node2D"]
+script = ExtResource("1_56p7v")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_30pnq")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

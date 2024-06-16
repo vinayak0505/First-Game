@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://ckfgfc3smqmn1"]
+
+[ext_resource type="Texture2D" uid="uid://2teqqhfcwmjs" path="res://assets/sprites/Lava.png" id="1_g0yer"]
+[ext_resource type="Script" path="res://scripts/lava_drop.gd" id="1_t86i8"]
+[ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="2_84bm3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynumc"]
+atlas = ExtResource("1_g0yer")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45825"]
+atlas = ExtResource("1_g0yer")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idu2w"]
+atlas = ExtResource("1_g0yer")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayyiw"]
+atlas = ExtResource("1_g0yer")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmbu8"]
+atlas = ExtResource("1_g0yer")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ptq6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynumc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45825")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idu2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayyiw")
+}],
+"loop": true,
+"name": &"moving_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmbu8")
+}],
+"loop": true,
+"name": &"remove",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_14q7n"]
+radius = 6.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8bdt8"]
+radius = 6.0
+height = 14.0
+
+[sub_resource type="Animation" id="Animation_agn38"]
+resource_name = "remove"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmgoi"]
+_data = {
+"remove": SubResource("Animation_agn38")
+}
+
+[node name="LavaDrop" type="Area2D"]
+script = ExtResource("1_t86i8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ptq6y")
+autoplay = "default"
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="KillZone" parent="." instance=ExtResource("2_84bm3")]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_14q7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_8bdt8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gmgoi")
+}
+
+[node name="RemoveTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RemoveTimer" to="." method="_on_remove_timer_timeout"]
