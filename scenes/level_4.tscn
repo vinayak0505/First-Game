@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="4_1idj8"]
 [ext_resource type="PackedScene" uid="uid://be04jd81t8ld" path="res://scenes/bear_trap.tscn" id="5_a5sv3"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="5_jppt5"]
-[ext_resource type="PackedScene" uid="uid://b3mj4c8bj38s0" path="res://scenes/slime_plus.tscn" id="6_l0j87"]
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="7_hxnhf"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="8_62rer"]
+[ext_resource type="PackedScene" uid="uid://bm2r4sk0l7e2x" path="res://scenes/slime.tscn" id="9_0v4ta"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="9_ndjoe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
@@ -529,15 +529,6 @@ position = Vector2(162, 384)
 [node name="Bear Trap11" parent="BearTrapGroup" instance=ExtResource("5_a5sv3")]
 position = Vector2(274, 384)
 
-[node name="SlimePlus" parent="." instance=ExtResource("6_l0j87")]
-position = Vector2(-158, 553)
-
-[node name="SlimePlus2" parent="." instance=ExtResource("6_l0j87")]
-position = Vector2(3, 553)
-
-[node name="SlimePlus3" parent="." instance=ExtResource("6_l0j87")]
-position = Vector2(148, 553)
-
 [node name="Platform" parent="." instance=ExtResource("7_hxnhf")]
 position = Vector2(589, 670)
 
@@ -563,3 +554,12 @@ position = Vector2(395, 809)
 position = Vector2(812, 862)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("9_ndjoe")]
+
+[node name="Slime" parent="." instance=ExtResource("9_0v4ta")]
+position = Vector2(-142, 553)
+
+[node name="Slime2" parent="." instance=ExtResource("9_0v4ta")]
+position = Vector2(-30, 553)
+
+[node name="Slime3" parent="." instance=ExtResource("9_0v4ta")]
+position = Vector2(146, 553)
