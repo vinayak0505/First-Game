@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://be04jd81t8ld"]
+
+[ext_resource type="Script" path="res://scripts/bear_trap.gd" id="1_nm4bb"]
+[ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="1_ow1ww"]
+[ext_resource type="Texture2D" uid="uid://drcxokmcplnha" path="res://assets/sprites/Bear Trap.png" id="2_byot6"]
+[ext_resource type="AudioStream" uid="uid://c464jv833evtk" path="res://assets/sounds/bear-trap-103800.mp3" id="4_3qmwj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni665"]
+size = Vector2(7.77818, 7.77818)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7egk4"]
+atlas = ExtResource("2_byot6")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8ut8"]
+atlas = ExtResource("2_byot6")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obstw"]
+atlas = ExtResource("2_byot6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gj38"]
+atlas = ExtResource("2_byot6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuubu"]
+atlas = ExtResource("2_byot6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8c38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7egk4")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g8ut8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7egk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obstw")
+}],
+"loop": false,
+"name": &"catch",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gj38")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuubu")
+}],
+"loop": false,
+"name": &"ready",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs6up"]
+size = Vector2(16, 4)
+
+[node name="Bear Trap" type="Area2D"]
+z_index = -1
+collision_mask = 2
+script = ExtResource("1_nm4bb")
+
+[node name="KillZone" parent="." instance=ExtResource("1_ow1ww")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(7.06233e-08, 3.5)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_ni665")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i8c38")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_rs6up")
+
+[node name="CatchTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ResetTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3qmwj")
+volume_db = -17.505
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="CatchTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

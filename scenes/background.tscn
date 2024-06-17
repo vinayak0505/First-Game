@@ -412,7 +412,7 @@ sources/0 = SubResource("TileSetAtlasSource_njtuj")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(243, 541)
-motion_mirroring = Vector2(1158, 1000)
+motion_mirroring = Vector2(1158, 970)
 
 [node name="Background" type="TileMap" parent="ParallaxLayer"]
 position = Vector2(-53, -14)
