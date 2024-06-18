@@ -10,8 +10,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		var angle = get_floor_angle();
 		_velocity = -_velocity * bounce * (1 - angle);
-		velocity.x += _velocity * angle;
-		velocity.x *= bounce;
+		velocity.x = (velocity.x * bounce) + _velocity * angle;
 
 	_velocity += gravity * delta;
 	velocity.y = _velocity;

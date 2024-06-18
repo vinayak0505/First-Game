@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="3_mwluu"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_lreki"]
+[ext_resource type="PackedScene" uid="uid://d2mkw26oefg6x" path="res://scenes/ball_generator.tscn" id="5_fdwg5"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="5_u1hd8"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="6_ep4db"]
-[ext_resource type="PackedScene" uid="uid://dmsgh4prk21ek" path="res://scenes/ball.tscn" id="6_lxbgw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
 texture = ExtResource("3_mwluu")
@@ -445,5 +445,5 @@ shape = SubResource("WorldBoundaryShape2D_08ui1")
 [node name="Finish" parent="." instance=ExtResource("6_ep4db")]
 position = Vector2(603, 13)
 
-[node name="Ball" parent="." instance=ExtResource("6_lxbgw")]
-position = Vector2(292, -336)
+[node name="BallGenerator" parent="." instance=ExtResource("5_fdwg5")]
+position = Vector2(277, -353)
