@@ -46,3 +46,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func impulse(num):
+	velocity.y -= num;
+	move_and_slide()

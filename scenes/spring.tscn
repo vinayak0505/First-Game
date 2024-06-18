@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnndookm0ber0"]
+
+[ext_resource type="Script" path="res://scripts/spring.gd" id="1_vlbn7"]
+[ext_resource type="Texture2D" uid="uid://cqpsshw05mu7o" path="res://assets/sprites/platforms.png" id="2_jtlmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asscf"]
+size = Vector2(20, 7)
+
+[sub_resource type="Animation" id="Animation_ct812"]
+resource_name = "jump"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 7), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-7, 0), Vector2(-7, 7), Vector2(-7, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.8, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"jump"
+}, {
+"args": [],
+"method": &"animation_complete"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mchvb"]
+_data = {
+"jump": SubResource("Animation_ct812")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qhex"]
+size = Vector2(18, 4)
+
+[node name="Spring" type="AnimatableBody2D"]
+script = ExtResource("1_vlbn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_asscf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mchvb")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 0)
+scale = Vector2(0.706599, 1)
+texture = ExtResource("2_jtlmo")
+offset = Vector2(10, 2.08165e-12)
+region_enabled = true
+region_rect = Rect2(17.0308, 49.0684, 29.6295, 6.94443)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_4qhex")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
