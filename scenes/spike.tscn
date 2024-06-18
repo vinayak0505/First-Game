@@ -3,11 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="1_kka6l"]
 [ext_resource type="Texture2D" uid="uid://da85s6wenyti1" path="res://assets/images/spike.png" id="2_s57sf"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Spike" type="Node2D"]
 scale = Vector2(0.2, 0.2)
 
 [node name="KillZone" parent="." instance=ExtResource("1_kka6l")]
@@ -15,8 +11,7 @@ scale = Vector2(0.2, 0.2)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZone"]
 polygon = PackedVector2Array(1, 39, 20, 20, 39, 39)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="Sprite2D" parent="."]
+position = Vector2(20, 20)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_s57sf")
