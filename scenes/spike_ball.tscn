@@ -28,9 +28,7 @@ _data = {
 "rotation": SubResource("Animation_4ilyt")
 }
 
-[node name="SpikeBall" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="SpikeBall" type="Node2D"]
 rotation = 0.788707
 scale = Vector2(0.25, 0.25)
 
@@ -40,12 +38,8 @@ scale = Vector2(0.25, 0.25)
 rotation = -0.729261
 shape = SubResource("CircleShape2D_0rtus")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="TextureRect" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_t3mbo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
