@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qiqqftilpwo"]
+
+[ext_resource type="Script" path="res://scripts/SpikeGenrator.gd" id="1_pskw2"]
+[ext_resource type="PackedScene" uid="uid://blobgfvsshx0l" path="res://scenes/spike.tscn" id="2_melk0"]
+
+[node name="SpikeGenrator" type="Node2D"]
+script = ExtResource("1_pskw2")
+
+[node name="Spike" parent="." instance=ExtResource("2_melk0")]

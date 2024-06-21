@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -280.0
+@export var force = 17.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -12,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_double_jump = true
 
 func _physics_process(delta):
+	_push(delta)
 	# Add the gravity.
 	velocity.y += gravity * delta
 
@@ -50,3 +52,13 @@ func _physics_process(delta):
 func impulse(num):
 	velocity.y -= num;
 	move_and_slide()
+	
+
+# This represents the player's inertia.
+
+func _push(delta):
+	# after calling move_and_slide()
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * force)

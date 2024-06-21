@@ -168,11 +168,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s58ay"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur7bf"]
+size = Vector2(10, 10)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 7
 floor_stop_on_slope = false
 script = ExtResource("1_kh5nf")
 
@@ -183,5 +184,5 @@ animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_s58ay")
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_ur7bf")
