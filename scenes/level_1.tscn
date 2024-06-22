@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://csq0wyqjbgfor"]
+[gd_scene load_steps=16 format=3 uid="uid://csq0wyqjbgfor"]
 
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_u1frw"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_b560r"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_kghnw"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_h53og"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="4_7l5d4"]
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="5_e1c06"]
@@ -52,15 +51,15 @@ texture = ExtResource("2_b560r")
 9:0/0 = 0
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6.3446, 8, 0.314981, -8, -1.21492)
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6.4, 8, 0, -8, -1.6)
 10:0/0 = 0
 10:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:0/0/physics_layer_0/angular_velocity = 0.0
-10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.16461, 8, -6.16461, 8, 0.944941, -8, 1.03493)
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.4, 8, -6.4, 8, 0, -8, 0)
 11:0/0 = 0
 11:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:0/0/physics_layer_0/angular_velocity = 0.0
-11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.16461, 8, -8, 8, -1.17726, -8, 0.349996)
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.4, 8, -8, 8, -1.6, -8, 0)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
@@ -100,15 +99,15 @@ texture = ExtResource("2_b560r")
 9:1/0 = 0
 9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:1/0/physics_layer_0/angular_velocity = 0.0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6.3446, 8, 0.314981, -8, -1.21492)
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6.4, 8, 0, -8, -1.6)
 10:1/0 = 0
 10:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:1/0/physics_layer_0/angular_velocity = 0.0
-10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.16461, 8, -6.16461, 8, 0.944941, -8, 1.03493)
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.4, 8, -6.4, 8, 0, -8, 0)
 11:1/0 = 0
 11:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:1/0/physics_layer_0/angular_velocity = 0.0
-11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.16461, 8, -8, 8, -1.17726, -8, 0.349996)
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.4, 8, -8, 8, -1.6, -8, 0)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
@@ -148,15 +147,15 @@ texture = ExtResource("2_b560r")
 9:2/0 = 0
 9:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:2/0/physics_layer_0/angular_velocity = 0.0
-9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6.3446, 8, 0.314981, -8, -1.21492)
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -6.4, 8, 0, -8, -1.6)
 10:2/0 = 0
 10:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:2/0/physics_layer_0/angular_velocity = 0.0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.16461, 8, -6.16461, 8, 0.944941, -8, 1.03493)
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.4, 8, -6.4, 8, 0, -8, 0)
 11:2/0 = 0
 11:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:2/0/physics_layer_0/angular_velocity = 0.0
-11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.16461, 8, -8, 8, -1.17726, -8, 0.349996)
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.4, 8, -8, 8, -1.6, -8, 0)
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:3/0/physics_layer_0/angular_velocity = 0.0
@@ -458,10 +457,6 @@ position = Vector2(172, 448)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_u1frw")]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("2_kghnw")
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-54, -11)
 tile_set = SubResource("TileSet_laor6")
@@ -484,14 +479,6 @@ position = Vector2(-14, 75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_08ui1")
-
-[node name="Coins" type="Node" parent="."]
-
-[node name="Coin9" parent="Coins" instance=ExtResource("7_yl5vb")]
-position = Vector2(850, 373)
-
-[node name="Coin8" parent="Coins" instance=ExtResource("7_yl5vb")]
-position = Vector2(333, 456)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -537,3 +524,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Finish" parent="." instance=ExtResource("6_uaaw5")]
 position = Vector2(477, -162)
+
+[node name="Coin9" parent="." instance=ExtResource("7_yl5vb")]
+position = Vector2(678, -75)
+
+[node name="Coin8" parent="." instance=ExtResource("7_yl5vb")]
+position = Vector2(161, 8)
