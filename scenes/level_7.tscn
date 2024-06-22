@@ -594,7 +594,7 @@ position = Vector2(-10, -75)
 position = Vector2(-10, -145)
 
 [node name="Platform4" parent="Node2D" instance=ExtResource("4_h5g4h")]
-position = Vector2(1201, -331)
+position = Vector2(784, -361)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Platform4"]
 libraries = {
@@ -697,7 +697,7 @@ libraries = {
 autoplay = "move"
 
 [node name="SpikeBall3" parent="." instance=ExtResource("10_pnqse")]
-position = Vector2(3074, -200)
+position = Vector2(3024, -200)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="SpikeBall3"]
 libraries = {
@@ -706,3 +706,6 @@ libraries = {
 autoplay = "move"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("11_505mo")]
+
+[node name="Platform" parent="." instance=ExtResource("4_h5g4h")]
+position = Vector2(720, -390)
