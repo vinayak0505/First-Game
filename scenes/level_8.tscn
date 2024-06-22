@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_sy3bx"]
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="4_imkk6"]
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="5_b3dk3"]
-[ext_resource type="Script" path="res://assets/sprites/level_8/move_on_button.gd" id="6_hwfg0"]
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="6_p87so"]
 [ext_resource type="PackedScene" uid="uid://b3mj4c8bj38s0" path="res://scenes/slime_plus.tscn" id="7_lj4ly"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="8_06u1e"]
 [ext_resource type="PackedScene" uid="uid://8qiqqftilpwo" path="res://scenes/spike_genrator.tscn" id="9_f6g33"]
 [ext_resource type="PackedScene" uid="uid://btq3rfb2cebyg" path="res://scenes/button.tscn" id="10_d8kow"]
+[ext_resource type="Script" path="res://scripts/level_8/move_on_button.gd" id="12_4l6jn"]
 [ext_resource type="PackedScene" uid="uid://ojuods5rjp1f" path="res://scenes/box.tscn" id="12_sfty4"]
 [ext_resource type="PackedScene" uid="uid://0ln74snodo6s" path="res://scenes/gate.tscn" id="13_1vfcj"]
-[ext_resource type="Script" path="res://assets/sprites/level_8/gate.gd" id="14_1wldj"]
+[ext_resource type="Script" path="res://scripts/level_8/gate.gd" id="15_rnhvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57suc"]
 texture = ExtResource("2_t4r4s")
@@ -485,7 +485,7 @@ shape = SubResource("WorldBoundaryShape2D_08ui1")
 
 [node name="Platform" parent="." instance=ExtResource("5_b3dk3")]
 position = Vector2(134, -170)
-script = ExtResource("6_hwfg0")
+script = ExtResource("12_4l6jn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
 libraries = {
@@ -503,6 +503,9 @@ position = Vector2(380, 45)
 
 [node name="Platform3" parent="." instance=ExtResource("5_b3dk3")]
 position = Vector2(894, -33)
+
+[node name="Platform4" parent="." instance=ExtResource("5_b3dk3")]
+position = Vector2(1351, -33)
 
 [node name="Finish" parent="." instance=ExtResource("8_06u1e")]
 position = Vector2(1910, 34)
@@ -530,7 +533,7 @@ position = Vector2(1097, -153)
 z_index = -1
 position = Vector2(1212, 17)
 scale = Vector2(3, 3)
-script = ExtResource("14_1wldj")
+script = ExtResource("15_rnhvv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Gate"]
 libraries = {

@@ -7,7 +7,7 @@ const POSTFIX = '.tscn';
 
 var levelScene = null;
 var coins = 0;
-var current_level = 9;
+var current_level = 11;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

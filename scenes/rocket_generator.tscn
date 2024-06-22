@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsndxje78048b"]
+
+[ext_resource type="Script" path="res://scripts/rocket_generator.gd" id="1_edc22"]
+[ext_resource type="Texture2D" uid="uid://y15fo7mhm5yo" path="res://assets/images/Tunnel.png" id="2_a7hyb"]
+
+[node name="RocketGenerator" type="Node2D"]
+z_index = -1
+script = ExtResource("1_edc22")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a7hyb")
+region_enabled = true
+region_rect = Rect2(3, 4, 11, 8)
