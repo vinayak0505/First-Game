@@ -3,6 +3,8 @@ extends Area2D
 @onready var timer = $Timer
 
 func _on_body_entered(body):
+	if(Engine.time_scale == 0.5):
+		return;
 	if(body.name == "Player"):
 		print("You Died!")
 		Engine.time_scale = 0.5

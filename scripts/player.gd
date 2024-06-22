@@ -16,6 +16,9 @@ func _physics_process(delta):
 	_push(delta)
 	# Add the gravity.
 	velocity.y += gravity * delta
+	if(Engine.time_scale == 0.5):
+		move_and_slide();
+		return;
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() || is_double_jump):
