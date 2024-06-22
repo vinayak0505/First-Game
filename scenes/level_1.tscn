@@ -526,7 +526,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(477, -162)
 
 [node name="Coin9" parent="." instance=ExtResource("7_yl5vb")]
-position = Vector2(678, -75)
+position = Vector2(689, -84)
 
 [node name="Coin8" parent="." instance=ExtResource("7_yl5vb")]
 position = Vector2(161, 8)
