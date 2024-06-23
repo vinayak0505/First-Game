@@ -18,19 +18,27 @@ var current_level = null;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Signals.ResetLevel.connect(reset_level)
 	#saveData(); return;
 	loadData();
 	loadLevel();
 
+func reset_level():
+	unloadLevel()
+	loadLevel()
+
 func changeChild(level=null):
 	unloadLevel();
 	if (level == null):
-		current_level += 1;
+		if(current_level == 11):
+			current_level = null;
+		else:
+			current_level += 1;
+			if (current_level > unlock_level):
+				unlock_level = current_level;
 	else:
 		current_level = level;
 
-	if (current_level > unlock_level):
-			unlock_level = current_level
 	loadLevel();
 	saveData();
 
@@ -44,8 +52,6 @@ func loadLevel():
 		var newLevel = load(PREFIX + str(current_level) + POSTFIX)
 		levelScene = newLevel.instantiate()
 		add_child(levelScene);
-		print(coins)
-		print(current_level - 1);
 		coins[current_level - 1] = 0;
 		coins_count_label.text = "Coins: 0" ;
 		level_label.text = "Level: " + str(current_level);
@@ -79,7 +85,6 @@ func loadData():
 
 func unPack(data):
 	unlock_level = data.get('unlock_level', 1);
-	print(unlock_level);
 	if 'coins' in data and data['coins'] is Array and data['coins'].size() == 11:
 		coins = data["coins"]
 	else:
