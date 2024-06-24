@@ -31,8 +31,8 @@ func _load_data():
 	_set_data();
 
 func _un_pack(data):
-	MusicVolumeInDb = data.get("music", 1);
-	SFXVolumeInDb = data.get("sfx", 1);
+	MusicVolumeInDb = data.get("music", linear_to_db(1));
+	SFXVolumeInDb = data.get("sfx", linear_to_db(1));
 	var mobile = OS.has_feature("mobile");
 	ShowControls = data.get("show_control", mobile);
 
