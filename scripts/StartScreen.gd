@@ -6,6 +6,7 @@ const PLAY_SCREEN = preload("res://play_screen.tscn")
 
 func _ready():
 	add_pre_child(PLAY_SCREEN);
+	Signals._load_data();
 	Signals.StartScreen.connect(show_home)
 	Signals.RootScreen.connect(_on_play_pressed)
 	Signals.SettingScreen.connect(_on_settings_pressed)

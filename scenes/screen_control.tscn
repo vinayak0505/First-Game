@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cntdcppub7r6j"]
+
+[ext_resource type="Script" path="res://scripts/screen_control.gd" id="1_tnd6v"]
+[ext_resource type="Texture2D" uid="uid://cuti8dyjp4wya" path="res://assets/sprites/LeftNormal.png" id="2_6y5gv"]
+[ext_resource type="Texture2D" uid="uid://duo1mya2krmho" path="res://assets/sprites/UpNormal.png" id="2_ue1t1"]
+[ext_resource type="Texture2D" uid="uid://btdfpydr8ldtw" path="res://assets/sprites/UpPressed.png" id="3_b500r"]
+[ext_resource type="Texture2D" uid="uid://c1fohgtf5maoi" path="res://assets/sprites/LeftPressed.png" id="3_xmtxw"]
+[ext_resource type="Texture2D" uid="uid://di3uya5fife3c" path="res://assets/sprites/RightNormal.png" id="4_8oc6x"]
+[ext_resource type="Texture2D" uid="uid://x6axpd6epmpu" path="res://assets/sprites/RightPressed.png" id="5_bb1xc"]
+
+[node name="ScreenControl" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_tnd6v")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="JumpButton" type="TouchScreenButton" parent="AspectRatioContainer"]
+position = Vector2(-150, -138)
+scale = Vector2(8, 8)
+texture_normal = ExtResource("2_ue1t1")
+texture_pressed = ExtResource("3_b500r")
+action = "jump"
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="LeftButton" type="TouchScreenButton" parent="AspectRatioContainer3"]
+position = Vector2(20, -138)
+scale = Vector2(8, 8)
+texture_normal = ExtResource("2_6y5gv")
+texture_pressed = ExtResource("3_xmtxw")
+action = "move_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="AspectRatioContainer3"]
+position = Vector2(170, -138)
+scale = Vector2(8, 8)
+texture_normal = ExtResource("4_8oc6x")
+texture_pressed = ExtResource("5_bb1xc")
+action = "move_right"
