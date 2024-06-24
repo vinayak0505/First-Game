@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfvvtj3jym8xo"]
+[gd_scene load_steps=16 format=3 uid="uid://cfvvtj3jym8xo"]
 
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="1_fgwi6"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="1_ovdjl"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="1_y213s"]
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="4_1idj8"]
 [ext_resource type="PackedScene" uid="uid://be04jd81t8ld" path="res://scenes/bear_trap.tscn" id="5_a5sv3"]
@@ -442,6 +443,8 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(286, 229)
+
+[node name="ScreenControl" parent="." instance=ExtResource("1_ovdjl")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-54, -11)

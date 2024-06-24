@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxqa75ns37clr"]
+[gd_scene load_steps=20 format=3 uid="uid://dxqa75ns37clr"]
 
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_u8vt1"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="3_br503"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="8_2titg"]
 [ext_resource type="PackedScene" uid="uid://b3mj4c8bj38s0" path="res://scenes/slime_plus.tscn" id="8_i6k0l"]
 [ext_resource type="PackedScene" uid="uid://blobgfvsshx0l" path="res://scenes/spike.tscn" id="9_xvsb3"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="12_sn6p7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
 texture = ExtResource("3_br503")
@@ -612,3 +613,5 @@ position = Vector2(2387, -199)
 
 [node name="Finish" parent="." instance=ExtResource("6_sjvfm")]
 position = Vector2(750, -739)
+
+[node name="ScreenControl" parent="." instance=ExtResource("12_sn6p7")]

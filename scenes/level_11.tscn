@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0epd1eijfbud"]
+[gd_scene load_steps=19 format=3 uid="uid://b0epd1eijfbud"]
 
 [ext_resource type="Script" path="res://scripts/level_11.gd" id="1_plo61"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_vbe5e"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="10_fcb4s"]
 [ext_resource type="PackedScene" uid="uid://btq3rfb2cebyg" path="res://scenes/button.tscn" id="11_eo8nv"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="11_k3rlq"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="12_cjwnq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57suc"]
 texture = ExtResource("2_jwy2q")
@@ -502,6 +503,8 @@ position = Vector2(153, -107)
 
 [node name="Finish" parent="." instance=ExtResource("11_k3rlq")]
 position = Vector2(997, 34)
+
+[node name="ScreenControl" parent="." instance=ExtResource("12_cjwnq")]
 
 [connection signal="died" from="Boss1" to="." method="_on_boss_1_died"]
 [connection signal="area_entered" from="Area2D" to="Boss1" method="_on_area_2d_area_entered"]

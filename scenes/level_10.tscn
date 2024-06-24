@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://kke3agiddwkd"]
+[gd_scene load_steps=28 format=3 uid="uid://kke3agiddwkd"]
 
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="1_x2105"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_etgdm"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://rb0a4tcb6fyd" path="res://scenes/spike_ball.tscn" id="10_pnqse"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="11_505mo"]
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="12_7n6de"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="13_bxwrb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_himau"]
 texture = ExtResource("1_x2105")
@@ -617,15 +618,19 @@ curve = SubResource("Curve2D_ge8lf")
 
 [node name="Platform4" parent="Path2D" instance=ExtResource("4_h5g4h")]
 position = Vector2(500, -250)
+scale = Vector2(1, 1)
 
 [node name="Platform5" parent="Path2D" instance=ExtResource("4_h5g4h")]
 position = Vector2(500, -250)
+scale = Vector2(1, 1)
 
 [node name="Platform6" parent="Path2D" instance=ExtResource("4_h5g4h")]
 position = Vector2(500, -250)
+scale = Vector2(1, 1)
 
 [node name="Platform7" parent="Path2D" instance=ExtResource("4_h5g4h")]
 position = Vector2(500, -250)
+scale = Vector2(1, 1)
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(500, -250)
@@ -712,3 +717,5 @@ position = Vector2(2899, -148)
 
 [node name="Coin2" parent="." instance=ExtResource("12_7n6de")]
 position = Vector2(720, -405)
+
+[node name="ScreenControl" parent="." instance=ExtResource("13_bxwrb")]

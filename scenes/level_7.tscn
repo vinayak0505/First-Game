@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxl5mcydmd8rq"]
+[gd_scene load_steps=15 format=3 uid="uid://dxl5mcydmd8rq"]
 
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="1_fgwi6"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_uit1q"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="6_gnmiw"]
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="7_d6ll2"]
 [ext_resource type="PackedScene" uid="uid://buyye4odwdtbv" path="res://scenes/lava_drop_generator.tscn" id="8_oc63h"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="9_0xi68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
 texture = ExtResource("1_y213s")
@@ -493,3 +494,5 @@ libraries = {
 "": SubResource("AnimationLibrary_juyya")
 }
 autoplay = "move"
+
+[node name="ScreenControl" parent="." instance=ExtResource("9_0xi68")]

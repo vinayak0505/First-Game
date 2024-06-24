@@ -31,14 +31,14 @@ func _load_data():
 	_set_data();
 
 func _un_pack(data):
-	MusicVolumeInDb = data.get("music", 1);
-	SFXVolumeInDb = data.get("sfx", 1);
+	MusicVolumeInDb = data.get("music", linear_to_db(1));
+	SFXVolumeInDb = data.get("sfx", linear_to_db(1));
 	var mobile = OS.has_feature("mobile");
 	ShowControls = data.get("show_control", mobile);
 
 func _set_data():
 	var music_index = AudioServer.get_bus_index("Music");
-	AudioServer.set_bus_volume_db(music_index, linear_to_db(MusicVolumeInDb));
+	AudioServer.set_bus_volume_db(music_index, MusicVolumeInDb);
 
 	var sfx_index = AudioServer.get_bus_index("SFX");
-	AudioServer.set_bus_volume_db(sfx_index, linear_to_db(SFXVolumeInDb))
+	AudioServer.set_bus_volume_db(sfx_index, SFXVolumeInDb)

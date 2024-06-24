@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgvsvtlhrlxf2"]
+[gd_scene load_steps=8 format=3 uid="uid://dgvsvtlhrlxf2"]
 
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_6avug"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_ss05m"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_rprc4"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="5_8sn0t"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="9_f1431"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57suc"]
@@ -426,3 +427,5 @@ position_smoothing_enabled = true
 
 [node name="Finish" parent="." instance=ExtResource("9_f1431")]
 position = Vector2(587, 50)
+
+[node name="ScreenControl" parent="." instance=ExtResource("5_8sn0t")]
