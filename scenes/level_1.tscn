@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://csq0wyqjbgfor"]
+[gd_scene load_steps=17 format=3 uid="uid://csq0wyqjbgfor"]
 
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_u1frw"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_b560r"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="7_yl5vb"]
 [ext_resource type="PackedScene" uid="uid://bm2r4sk0l7e2x" path="res://scenes/slime.tscn" id="8_grv6x"]
 [ext_resource type="FontFile" uid="uid://coaehs34i4elu" path="res://assets/fonts/PixelOperator8.ttf" id="9_dtdnh"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="10_pyajy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
 texture = ExtResource("2_b560r")
@@ -530,3 +531,5 @@ position = Vector2(689, -84)
 
 [node name="Coin8" parent="." instance=ExtResource("7_yl5vb")]
 position = Vector2(161, 8)
+
+[node name="ScreenControl" parent="." instance=ExtResource("10_pyajy")]
