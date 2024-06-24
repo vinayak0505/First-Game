@@ -23,7 +23,6 @@ func _process(delta):
 @onready var animation_player = $AnimationPlayer
 
 func _on_body_entered(body):
-	print("working")
 	if(remove == false):
 		return;
 	moving = false;
@@ -33,5 +32,4 @@ func _on_body_entered(body):
 
 
 func _on_remove_timer_timeout():
-	print("timer called")
 	remove = true;
