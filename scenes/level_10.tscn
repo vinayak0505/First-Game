@@ -1,5 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://kke3agiddwkd"]
+[gd_scene load_steps=29 format=3 uid="uid://kke3agiddwkd"]
 
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_0xbpo"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="1_x2105"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_etgdm"]
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="4_h5g4h"]
@@ -555,6 +556,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(263, 534)
+script = ExtResource("1_0xbpo")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-54, -11)

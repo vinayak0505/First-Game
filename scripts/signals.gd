@@ -4,6 +4,7 @@ signal ResetLevel;
 signal StartScreen;
 signal SettingScreen;
 signal RootScreen;
+signal DrawPoint;
 
 var MusicVolumeInDb;
 var SFXVolumeInDb;

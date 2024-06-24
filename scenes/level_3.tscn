@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://caoytf6wc88n3"]
+[gd_scene load_steps=17 format=3 uid="uid://caoytf6wc88n3"]
 
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_l7pkm"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_op01m"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="3_ab5uc"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_4su4e"]
@@ -438,6 +439,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(4, 0)
+script = ExtResource("1_l7pkm")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_op01m")]
 
@@ -474,7 +476,7 @@ position = Vector2(2162, 309)
 position = Vector2(305, 462)
 
 [node name="Platform2" parent="." instance=ExtResource("6_ylxwk")]
-position = Vector2(1088.09, 468)
+position = Vector2(876, 468)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
 libraries = {

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgvsvtlhrlxf2"]
+[gd_scene load_steps=9 format=3 uid="uid://dgvsvtlhrlxf2"]
 
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_6avug"]
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_av3it"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_ss05m"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_rprc4"]
 [ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="5_8sn0t"]
@@ -403,6 +404,7 @@ sources/0 = SubResource("TileSetAtlasSource_57suc")
 
 [node name="Game" type="Node2D"]
 position = Vector2(244, 541)
+script = ExtResource("1_av3it")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_6avug")]
 
