@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://c06bqsxkv2mvb"]
+
+[ext_resource type="Script" path="res://scripts/settings_screen.gd" id="1_kisrk"]
+[ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="2_exuwc"]
+
+[node name="SettingsScreen" type="Node2D"]
+script = ExtResource("1_kisrk")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_exuwc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="SettingsLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="MusicHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/MusicHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Music"
+
+[node name="MusicHSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/MusicHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.0
+max_value = 1.0
+step = 0.1
+
+[node name="SFXHBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/SFXHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "SFC"
+
+[node name="SFXHSlider2" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/SFXHBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 3.0
+max_value = 1.0
+step = 0.1
+
+[node name="BackButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "<- back"
+
+[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/MusicHBoxContainer/MusicHSlider" to="." method="_on_music_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/MarginContainer/VBoxContainer/SFXHBoxContainer2/SFXHSlider2" to="." method="_on_sfxh_slider_2_value_changed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
