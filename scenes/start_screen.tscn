@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhg2pkbaekauk"]
+
+[ext_resource type="Script" path="res://scripts/StartScreen.gd" id="1_e0dpx"]
+[ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="2_swk70"]
+[ext_resource type="Texture2D" uid="uid://ddcf8nrret82l" path="res://assets/images/settings.png" id="3_d2ar5"]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource("1_e0dpx")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" parent="Node2D" instance=ExtResource("2_swk70")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2D"]
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="Node2D/CanvasLayer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+icon = ExtResource("3_d2ar5")
+expand_icon = true
+
+[node name="Title" type="Label" parent="Node2D/CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 40
+text = "Knight In Floating Forest"
+
+[node name="StartButton" type="Button" parent="Node2D/CanvasLayer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 3.0
+toggle_mode = true
+text = "Play"
+
+[node name="EmptyControlNode" type="Control" parent="Node2D/CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[connection signal="pressed" from="Node2D/CanvasLayer/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Node2D/CanvasLayer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_button_2_pressed"]

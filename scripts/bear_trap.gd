@@ -18,7 +18,6 @@ func _on_body_entered(body):
 @onready var audio_stream_player = $AudioStreamPlayer
 
 func _on_timer_timeout():
-	print("timeout")
 	reset_timer.start(1);
 	animated_sprite_2d.play("catch");
 	collision_shape_2d.set_disabled(false);

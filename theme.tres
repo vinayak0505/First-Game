@@ -19,19 +19,19 @@ corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tcls3"]
 texture = ExtResource("3_r68qt")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-region_rect = Rect2(4, 4, 12, 12)
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_swjtl"]
 texture = ExtResource("2_c6yrv")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
+texture_margin_left = 4.0
+texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
-region_rect = Rect2(2, 2, 14, 14)
+region_rect = Rect2(0, 0, 16, 16)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61t10"]
 
