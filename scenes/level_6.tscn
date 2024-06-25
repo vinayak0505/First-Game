@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgsroh4c4v0g7"]
+[gd_scene load_steps=16 format=3 uid="uid://dgsroh4c4v0g7"]
 
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_apwfe"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_iv58m"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="3_mwluu"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_lreki"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6tpl0wnwstn" path="res://scenes/kill_zone.tscn" id="5_u1hd8"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="6_ek2wl"]
 [ext_resource type="PackedScene" uid="uid://rb0a4tcb6fyd" path="res://scenes/spike_ball.tscn" id="7_lcuo5"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="9_ttx5e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
 texture = ExtResource("3_mwluu")
@@ -477,6 +479,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(253, 533)
+script = ExtResource("1_apwfe")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_iv58m")]
 
@@ -532,3 +535,5 @@ libraries = {
 "": SubResource("AnimationLibrary_0ajl6")
 }
 autoplay = "move"
+
+[node name="ScreenControl" parent="." instance=ExtResource("9_ttx5e")]

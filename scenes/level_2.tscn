@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://djmar0n0hhycs"]
+[gd_scene load_steps=18 format=3 uid="uid://djmar0n0hhycs"]
 
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_m6iu0"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_n1vd6"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_0773q"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_bgqq8"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="6_3m25s"]
 [ext_resource type="PackedScene" uid="uid://bm2r4sk0l7e2x" path="res://scenes/slime.tscn" id="7_epdei"]
 [ext_resource type="PackedScene" uid="uid://b45vua4hrimaj" path="res://scenes/finish.tscn" id="9_74sko"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="9_tw2vl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57suc"]
 texture = ExtResource("2_0773q")
@@ -454,6 +456,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(244, 541)
+script = ExtResource("1_m6iu0")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_n1vd6")]
 
@@ -513,3 +516,5 @@ position = Vector2(477, -211)
 
 [node name="Slime" parent="." instance=ExtResource("7_epdei")]
 position = Vector2(1726, -266)
+
+[node name="ScreenControl" parent="." instance=ExtResource("9_tw2vl")]

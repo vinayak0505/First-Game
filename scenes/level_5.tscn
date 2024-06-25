@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxqa75ns37clr"]
+[gd_scene load_steps=21 format=3 uid="uid://dxqa75ns37clr"]
 
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_u8vt1"]
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_wqfgg"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="3_br503"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="4_jlkht"]
 [ext_resource type="PackedScene" uid="uid://be3qk5rfo51g6" path="res://scenes/platform.tscn" id="5_fce0o"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8x6j1v11wonw" path="res://scenes/coin.tscn" id="8_2titg"]
 [ext_resource type="PackedScene" uid="uid://b3mj4c8bj38s0" path="res://scenes/slime_plus.tscn" id="8_i6k0l"]
 [ext_resource type="PackedScene" uid="uid://blobgfvsshx0l" path="res://scenes/spike.tscn" id="9_xvsb3"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="12_sn6p7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njtuj"]
 texture = ExtResource("3_br503")
@@ -462,6 +464,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(256, 546)
+script = ExtResource("1_wqfgg")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_u8vt1")]
 
@@ -612,3 +615,5 @@ position = Vector2(2387, -199)
 
 [node name="Finish" parent="." instance=ExtResource("6_sjvfm")]
 position = Vector2(750, -739)
+
+[node name="ScreenControl" parent="." instance=ExtResource("12_sn6p7")]

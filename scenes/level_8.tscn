@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cx26wap7n7yeu"]
+[gd_scene load_steps=24 format=3 uid="uid://cx26wap7n7yeu"]
 
+[ext_resource type="Script" path="res://scripts/draw_line.gd" id="1_30ayn"]
 [ext_resource type="PackedScene" uid="uid://cq0qntscw1prc" path="res://scenes/background.tscn" id="1_q4ey3"]
 [ext_resource type="Texture2D" uid="uid://5eni4ahrldbm" path="res://assets/sprites/world_tileset.png" id="2_t4r4s"]
 [ext_resource type="PackedScene" uid="uid://c2ejivsvp5x2o" path="res://scenes/player.tscn" id="3_sy3bx"]
@@ -13,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/level_8/move_on_button.gd" id="12_4l6jn"]
 [ext_resource type="PackedScene" uid="uid://ojuods5rjp1f" path="res://scenes/box.tscn" id="12_sfty4"]
 [ext_resource type="PackedScene" uid="uid://0ln74snodo6s" path="res://scenes/gate.tscn" id="13_1vfcj"]
+[ext_resource type="PackedScene" uid="uid://cntdcppub7r6j" path="res://scenes/screen_control.tscn" id="15_dhfjr"]
 [ext_resource type="Script" path="res://scripts/level_8/gate.gd" id="15_rnhvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_57suc"]
@@ -456,6 +458,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 position = Vector2(244, 541)
+script = ExtResource("1_30ayn")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_q4ey3")]
 
@@ -543,6 +546,8 @@ libraries = {
 
 [node name="Box3" parent="." instance=ExtResource("12_sfty4")]
 position = Vector2(1555, -143)
+
+[node name="ScreenControl" parent="." instance=ExtResource("15_dhfjr")]
 
 [connection signal="pressed" from="Button" to="Platform" method="_on_button_pressed"]
 [connection signal="released" from="Button" to="Platform" method="_on_button_released"]

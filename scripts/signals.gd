@@ -4,6 +4,7 @@ signal ResetLevel;
 signal StartScreen;
 signal SettingScreen;
 signal RootScreen;
+signal DrawPoint;
 
 var MusicVolumeInDb;
 var SFXVolumeInDb;
@@ -38,7 +39,7 @@ func _un_pack(data):
 
 func _set_data():
 	var music_index = AudioServer.get_bus_index("Music");
-	AudioServer.set_bus_volume_db(music_index, linear_to_db(MusicVolumeInDb));
+	AudioServer.set_bus_volume_db(music_index, MusicVolumeInDb);
 
 	var sfx_index = AudioServer.get_bus_index("SFX");
-	AudioServer.set_bus_volume_db(sfx_index, linear_to_db(SFXVolumeInDb))
+	AudioServer.set_bus_volume_db(sfx_index, SFXVolumeInDb)
