@@ -46,7 +46,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 3.0
-toggle_mode = true
 text = "Play"
 script = ExtResource("4_f5hyh")
 
