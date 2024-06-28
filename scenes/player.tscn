@@ -186,3 +186,8 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_ur7bf")
+
+[node name="DieTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DieTimer" to="." method="_on_die_timer_timeout"]
