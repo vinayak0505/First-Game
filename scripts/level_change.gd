@@ -24,6 +24,7 @@ func _ready():
 	loadLevel();
 
 func reset_level():
+	print("reset_level called")
 	unloadLevel()
 	loadLevel()
 
